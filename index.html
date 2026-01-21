@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function displayDate() {
+            let today = new Date();
+            let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
+            document.getElementById("dateBox").value = date;
+        }
+
+        function calculateFactorial() {
+            let n = prompt("Enter a number to calculate its factorial:");
+            n = parseInt(n);
+
+            if (isNaN(n) || n < 0) {
+                alert("Please enter a valid non-negative number.");
+                return;
+            }
+
+            let fact = 1;
+            for (let i = 1; i <= n; i++) {
+                fact = fact * i;
+            }
+            alert("The factorial of " + n + " is " + fact + ".");
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="displayDate()">Display Date</button>
+    <input type="text" id="dateBox">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+</body>
+</html>
